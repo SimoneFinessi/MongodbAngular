@@ -5,7 +5,7 @@ from pymongo.server_api import ServerApi
 import pandas as pd
 from flask_cors import CORS
 app = Flask(__name__)
-CORS(app) 
+CORS(app, resources={r"/api/*": {"origins": "*"}}) 
 #connect to DB
 uri = "mongodb+srv://FinessiSimone:AtlasFinessi@clusters.kkvqs.mongodb.net/?retryWrites=true&w=majority&appName=ClusterS"
 # Create a new client and connect to the server
@@ -54,4 +54,4 @@ def add_utente():
     return jsonify({"message": "User created successfully"}), 201
 
 if __name__ == '__main__':
-    app.run(debug=True)
+     app.run(host='0.0.0.0', port=5000, debug=True)
