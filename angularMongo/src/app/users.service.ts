@@ -6,8 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsersService {
-  private apiUrl = 'http://127.0.0.1:5000/api/reg';
-
+  private apiReg = 'http://127.0.0.1:5000/api/reg';
   constructor(private http: HttpClient) { }
 
   // Funzione per aggiungere un nuovo utente
@@ -15,10 +14,15 @@ export class UsersService {
     const userData = { username, password, email };
     console.log(userData);
     // Invia la richiesta POST con i dati dell'utente
-    return this.http.post(this.apiUrl, userData, {
+    return this.http.post(this.apiReg, userData, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     });
+  }
+
+  getUser(mail: string,password:string) {
+    const apiLog = `http://127.0.0.1:5000/api/login/${mail}&${password}`;
+    return this.http.get(apiLog);
   }
 }
