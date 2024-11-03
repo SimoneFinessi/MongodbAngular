@@ -1,4 +1,4 @@
-import pandas as pd
+
 from flask import Flask, jsonify, request
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi

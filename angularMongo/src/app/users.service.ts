@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsersService {
-  private apiReg = 'https://5000-simonefines-mongodbangu-ytalh0u1z0t.ws-eu116.gitpod.io/api/reg';
+  private apiReg = 'https://5000-simonefines-mongodbangu-g365jrhsve2.ws-eu116.gitpod.io/api/reg';
   constructor(private http: HttpClient) { }
 
   // Funzione per aggiungere un nuovo utente
@@ -22,7 +22,7 @@ export class UsersService {
   }
 
   getUser(mail: string,password:string) {
-    const apiLog = `https://5000-simonefines-mongodbangu-ytalh0u1z0t.ws-eu116.gitpod.io/api/login/${mail}&${password}`;
+    const apiLog = `https://5000-simonefines-mongodbangu-g365jrhsve2.ws-eu116.gitpod.io/api/login/${mail}&${password}`;
     return this.http.get(apiLog);
   }
 }
